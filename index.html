@@ -14,9 +14,22 @@
         right: 0;
         left: 0;
       }
+
+      body {
+        background-image: url("snake.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+
+      h1 {
+        text-align: center;
+        font-size: 85px;
+      }
+
     </style>
   </head>
   <body>
+    <h1>¡SNAKE!</h1>
     <script>
       // Constants
       var COLS=26, ROWS=26;
@@ -194,10 +207,10 @@
           for (var y=0; y < grid.height; y++) {
             switch (grid.get(x, y)) {
               case EMPTY:
-                ctx.fillStyle = "#fff";
+                ctx.fillStyle = "#000";
                 break;
               case SNAKE:
-                ctx.fillStyle = "#0ff";
+                ctx.fillStyle = "#0fff00";
                 break;
               case FRUIT:
                 ctx.fillStyle = "#f00";
@@ -206,7 +219,7 @@
             ctx.fillRect(x*tw, y*th, tw, th);
           }
         }
-        ctx.fillStyle = "#000";
+        ctx.fillStyle = "#fff";
         ctx.fillText("SCORE: " + score, 10, canvas.height-10);
       }
 
